@@ -20,15 +20,6 @@ const HeaderDiv = styled.div`
     width: 1280px;
   }
 }
-.header .date {
-  margin-left: 25px;
-  flex: 1;
-}
-.header .temp {
-  text-align: right;
-  margin-right: 25px;
-  flex: 1;
-}
 `
 const HeaderH1 = styled.h1`
   font-size: 60px;
@@ -39,18 +30,28 @@ const HeaderH1 = styled.h1`
   color: #000;
 `
 
-const HeaderSpan = styled.span `
+const HeaderSpan = styled.span`
   align-self: flex-end;
   font-size: 11px;
   font-weight: bold;
   letter-spacing: 1px;
 `
+
+const TempSpan = styled(HeaderSpan)`
+  text-align: right;
+  margin-right: 25px;
+  flex: 1;
+`
+const DateSpan = styled(HeaderSpan)`
+  margin-left: 25px;
+  flex: 1;
+`
 const Header = () => {
   return (
     <HeaderDiv>
-      <span className="date">SMARCH 32, 2018</span>
+      <DateSpan>SMARCH 32, 2018</DateSpan>
       <HeaderH1>Lambda Times</HeaderH1>
-      <span className="temp">98°</span>
+      <TempSpan>98°</TempSpan>
     </HeaderDiv>
   )
 }
